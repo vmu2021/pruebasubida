@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings
+	xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
+        http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+	version="1.0">
+
+	<mapped-superclass class="es.mde.comun.Empleado"	access="FIELD">
+		<attributes>
+			<many-to-one name="departamento" target-entity="es.mde.entidades.DepartamentoConId"><!-- fetch="LAZY"> -->
+				<join-column name="DEPARTAMENTO"
+					referencedColumnName="ID" />
+			</many-to-one>
+	<one-to-many name="sueldos" target-entity="es.mde.entidades.SueldoConId" mapped-by="empleado"/>
+		
+		</attributes>
+	</mapped-superclass>
+
+</entity-mappings>
+

@@ -1,0 +1,3 @@
+rootProject.name = 'gortizAbogados-api'
+/*includeFlat 'gortizAbogados'
+project(':gortizAbogados').projectDir = new File('../abogados-lib-main')*/

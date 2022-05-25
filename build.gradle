@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'es.mde'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://jitpack.io' }
+}
+configurations {
+ compileOnly {
+  extendsFrom annotationProcessor
+ }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	/*implementation 'org.springframework.boot:spring-boot-starter-security'*/
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	/*testImplementation 'org.springframework.security:spring-security-test'*/
+	implementation 'com.github.R3pl1k4nt3:abogados-lib:1.0.5'
+	/*implementation project (':gortizAbogados')*/
+}
+
+test {
+	useJUnitPlatform()
+}

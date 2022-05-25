@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings
+	xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
+        http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+	version="1.0">
+
+	<mapped-superclass class="es.mde.comun.Departamento"
+		access="FIELD">
+		<attributes>
+			<one-to-many name="empleados"
+				target-entity="es.mde.entidades.EmpleadoConId"
+				mapped-by="departamento" />
+		</attributes>
+	</mapped-superclass>
+
+</entity-mappings>
+
